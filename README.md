@@ -15,13 +15,14 @@ Foi utilizado para realizar uma simulação:
 EXEMPLO DE EXECUÇÃO:
 
 O botão do joystick deverá no eixo y acionar o LED azul e no eixo x acionar o botão vermelho. Enquanto isso, esses movimentos deverão ser apresentados no display. E quando o botão a for pressionado deverá ativar ou desativar os LEDs PWM a cada acionamento. 
-E quando o botão do joystick for pressionado alterar a o estado do LED verde a cada acionamento modificando a borda do display para indicar quando for pressionado.
+E quando o botão do joystick for pressionado alterar a o estado do LED verde a cada acionamento modificando a borda do display para indicar quando for pressionado. Incrementei três tipos de borda:(Nenhuma borda, com borda simples e borda dupla).
 
 Explicação: 
 Deste modo é constituído este programa realizando alguns processos que  contribuem para o aprimoramento dos códigos  explorando   as funcionalidades da placa de desenvolvimento BitDogLab, consolidando os conhecimentos em programação de  microcontroladores.
 
 LINK DO VÍDEO EXPLICATIVO:
-Desta forma para simplificar a compreensão produzido um vídeo de  2 minutos, explicando  brevemente as funcionalidades implementadas. E mostrando o  execução do projeto na placa bitDogLad 
-......
+Desta forma para simplificar a compreensão produzido um vídeo de  2 minutos, explicando  brevemente as funcionalidades implementadas. E mostrando o  execução do projeto na placa bitDogLad:
+https://drive.google.com/file/d/1XqhCfXkaEsflt5xu_IQ1sM6sKOcjI0gC/view?usp=sharing
+
 PROJETO DESENVOLVIDO POR:
 Camile Vitória Lino dos Santos.
