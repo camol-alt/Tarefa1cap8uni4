@@ -48,7 +48,7 @@ void gpio_callback(uint gpio, uint32_t events) {
         debounce_joystick = true;
         led_state = !led_state;
         gpio_put(GREEN_LED_PIN, led_state);
-        border_style = (border_style + 1) % 3; // Alterna entre 3 estilos de borda
+        border_style = (border_style + 1) % 4; // Alterna entre 4 estilos de borda
         printf("Botão do Joystick pressionado, estado do LED verde: %d, estilo de borda: %d\n", led_state, border_style);
     } 
     else if (gpio == BUTTON_A && !debounce_button_A) {
@@ -144,8 +144,8 @@ int main() {
         }
 
         ssd1306_fill(&disp, false);
-        uint8_t square_x = (vry_value * 120) / 4095; // Invertendo os eixos X e Y
-        uint8_t square_y = ((4095 - vrx_value) * 56) / 4095; // Invertendo os eixos X e Y
+        uint8_t square_x = (vrx_value * 120) / 4095; // Coordenadas ajustadas
+        uint8_t square_y = (vry_value * 56) / 4095; // Coordenadas ajustadas
         ssd1306_rect(&disp, square_y, square_x, 8, 8, true, true);
 
         // Alterna entre diferentes estilos de borda
@@ -153,6 +153,9 @@ int main() {
             ssd1306_rect(&disp, 0, 0, 128, 64, true, false);
         } else if (border_style == 2) {
             ssd1306_rect(&disp, 2, 2, 124, 60, true, false);
+        } else if (border_style == 3) { // Adiciona duas bordas: uma fina e outra grossa
+            ssd1306_rect(&disp, 0, 0, 128, 64, true, false); // Borda grossa
+            ssd1306_rect(&disp, 4, 4, 120, 56, true, false); // Borda fina
         }
 
         ssd1306_send_data(&disp);
